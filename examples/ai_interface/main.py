@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-import io
+import io,os
 
 import replicate  # very nice API to run AI models; see https://replicate.com/
 
 from nicegui import run, ui
 from nicegui.events import UploadEventArguments
 
-
 async def transcribe(e: UploadEventArguments):
+    # os.environ['REPLICATE_API_TOKEN']='r8_4wpYTCJQ2POM1Vhujt2uLyNboAGhEcb174Sp6'
+
     transcription.text = 'Transcribing...'
     model = replicate.models.get('openai/whisper')
     version = model.versions.get('30414ee7c4fffc37e260fcab7842b5be470b9b840f2b608f5baa9bbef9a259ed')
@@ -17,6 +18,8 @@ async def transcribe(e: UploadEventArguments):
 
 
 async def generate_image():
+    # os.environ['REPLICATE_API_TOKEN']
+
     image.source = 'https://dummyimage.com/600x400/ccc/000000.png&text=building+image...'
     model = replicate.models.get('stability-ai/stable-diffusion')
     version = model.versions.get('db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf')

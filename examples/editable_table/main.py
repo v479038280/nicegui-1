@@ -69,7 +69,7 @@ table.add_slot('body', r'''
 ''')
 with table.add_slot('bottom-row'):
     with table.cell().props('colspan=3'):
-        ui.button('Add row', icon='add', color='accent', on_click=add_row).classes('w-full')
+        ui.button('Add row', icon='add', color='accent', on_click=add_row)
 table.on('rename', rename)
 table.on('delete', delete)
 
