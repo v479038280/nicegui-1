@@ -36,4 +36,4 @@ def main_page():
     progressbar.visible = False
 
 
-ui.run()
+ui.run(uvicorn_logging_level='info')

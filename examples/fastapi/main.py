@@ -7,7 +7,8 @@ app = FastAPI()
 
 @app.get('/')
 def read_root():
-    return {'Hello': 'World'}
+    return {'Hello': 'World','a':'b','c':'d','e':'f'}
+
 
 
 frontend.init(app)
