@@ -13,7 +13,7 @@ def heavy_computation(q: Queue) -> str:
         time.sleep(0.1)
 
         # Update the progress bar through the queue
-        q.put_nowait(i / n)
+        q.put_nowait(50)
     return 'Done!'
 
 
